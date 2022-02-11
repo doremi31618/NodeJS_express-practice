@@ -1,12 +1,77 @@
 <html>
-    <head>
-        <title>
-            {{title}}
-        </title>
-        <link rel="stylesheet" href="../sites/stylesheets/style.css">
-        <link rel="stylesheet" href="../sites/stylesheets/bootstrap.min.css" >
-    </head>
-    <body>
+
+<head>
+    <title> {{title}} </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../sites/javascripts/jquery-3.5.1.slim.min.js"></script>
+    {{!--
+    <script type="text/javascript" src="../sites/javascripts/uianumation.js"></script> --}}
+    <script type="text/javascript" src="../sites/javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../sites/stylesheets/style.css">
+    <link rel="stylesheet" href="../sites/stylesheets/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-2">
+            <nav id="sidebar">
+                <div class="col-sm-4"></div>
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10">
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle">Home</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a href="/catalog/books">All books</a>
+                                </li>
+                                <li>
+                                    <a href="/catalog/authors">All authors</a>
+                                </li>
+                                <li>
+                                    <a href="/catalog/bookinstances">All bookinstance</a>
+                                </li>
+                                <li>
+                                    <a href="/catalog/genres">All genres</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle">Create</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li><a href="/catalog/author/create">Create new Author</a></li>
+                                <li><a href="/catalog/book/create">Create new book</a></li>
+                                <li><a href="/catalog/genre/create">Create new genre</a></li>
+                                <li><a href="/catalog/bookinstance/create">Create new bookinstance</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="/auth/google">google login</a>
+                        </li>
+                </ul>
+                {{!-- <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> --}}
+            </nav>
+        </div>
+        <div class="col-sm-6">
         {{{body}}}
-    </body>
+    </div>
+    </div>
+    
+
+</body>
+
 </html>

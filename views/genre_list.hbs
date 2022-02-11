@@ -1,0 +1,19 @@
+
+{{#if err}}
+    <p>something went wrong</p>
+    err
+{{else}}
+    
+        
+        <ul>
+            {{#each genre_list}}
+            <li>
+                <a href="{{this.url}}">
+                    {{this.name}}
+                </a>
+            </li>
+        </ul>
+            {{else}}
+            <p>no content</p>
+            {{/each}}
+{{/if}}

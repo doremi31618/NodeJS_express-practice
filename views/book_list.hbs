@@ -1,0 +1,14 @@
+
+
+{{#if err}}
+    <p>something went wrong</p>
+    err
+{{else}}
+    <ul>
+    {{#each book in book_list}}
+        <li><a href="{{book.url}}">{{book.title}} | {{book.author.name}}</a></li>
+    </ul>
+    {{else}}
+    <p>no content</p>
+    {{/each}}
+{{/if}}

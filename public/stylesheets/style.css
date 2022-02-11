@@ -6,3 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  width: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  background: #d2dbff;
+  color: #fff;
+  transition: all 0.3s;
+}

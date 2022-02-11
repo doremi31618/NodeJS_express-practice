@@ -1,0 +1,30 @@
+Handlebars.registerHelper('isEqual', function (value1, value2) {
+  return value1 == value2;
+});
+
+{{#if err}}
+<p>somethig went wrong</p>
+err
+{{else}}
+    <ul>
+    {{#each bookinstances_list}}
+    <li>
+    <a href="{{this.url}}">
+        {{this.title}} : {{this.imprint}} - 
+        {{#if (isEqual this.status 'Available')}}
+        <span class="text-success">{{this.status}}</span>
+        {{else}}
+        <span class="text-success">Due : {{this.due_back_formated}}</span>
+        {{/if}}
+        {{#if (isEqual this.status 'Maintenance')}}
+        <span class="text-danger">{{this.status}}</span>
+        {{else}}
+        <span class="text-warning">{{this.status}}</span>
+        {{/if}}
+    </a>
+    </li>
+    </ul>
+    {{else}}
+    <p>no content</p>
+    {{/each}}
+{{/if}}

@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+{{#if err}}
+<p>somethig went wrong</p>
+{{else}}
+<ul>
+    {{#each author_list}}
+    <li>
+        <a href="{{this.url}}">
+            {{this.first_name}} , {{this.family_name}}  | {{this.life_span}}
+        </a>
+    </li>
+</ul>
+    {{else}}
+    <p>no content</p>
+    {{/each}}
+{{/if}}
