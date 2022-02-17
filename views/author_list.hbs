@@ -4,13 +4,11 @@
 {{else}}
 <ul>
     {{#each author_list}}
-    <li>
-        <a href="{{this.url}}">
-            {{this.first_name}} , {{this.family_name}}  | {{this.life_span}}
-        </a>
+    <li><a href="{{this.url}}"> {{this.name}} | {{this.life_span}}</a>
     </li>
-</ul>
     {{else}}
+</ul>
+    
     <p>no content</p>
     {{/each}}
 {{/if}}

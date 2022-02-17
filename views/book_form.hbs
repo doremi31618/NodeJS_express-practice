@@ -1,0 +1,67 @@
+{{#if book}}
+<h4> Update book : {{book.title}}</h4>
+<form action="/catalog/book/{{book._id}}/update" method="POST">
+    <div class="form-group">
+        <label for="">title</label>
+        <input type="text" name="title" placeholder="title" value="{{book.title}}">
+    </div>
+    <div class="form-group">
+        <label for="author">author</label>
+        <select name="author" id="author-form" value="{{book.author._id}}">
+            {{#each authors}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="genre">genre</label>
+        <select name="genre" id="genre-form" value="{{book.genre._id}}">
+            {{#each genres}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="summary">summary</label>
+        <input type="text" name="summary" placeholder="summary" value="{{book.summary}}">
+    </div>
+    <div class="form-group">
+        <label for="ISBN">ISBN Code</label>
+        <input type="text" name="isbn" placeholder="isbn13" value="{{book.isbn}}">
+    </div>
+    <input type="submit" value="submit">
+</form>
+{{else}}
+<h4> Create new book</h4>
+<form action="/catalog/book/create" method="POST">
+    <div class="form-group">
+        <label for="">title</label>
+        <input type="text" name="title" placeholder="title">
+    </div>
+    <div class="form-group">
+        <label for="author">author</label>
+        <select name="author" id="author-form">
+            {{#each authors}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="genre">genre</label>
+        <select name="genre" id="genre-form">
+            {{#each genres}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="summary">summary</label>
+        <input type="text" name="summary" placeholder="summary">
+    </div>
+    <div class="form-group">
+        <label for="ISBN">ISBN Code</label>
+        <input type="text" name="isbn" placeholder="isbn13">
+    </div>
+    <input type="submit" value="submit">
+</form>
+{{/if}}

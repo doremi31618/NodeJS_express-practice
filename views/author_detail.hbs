@@ -1,0 +1,19 @@
+
+{{!-- author information --}}
+<h1>{{author.name}}</h1>
+<h4>{{author.life_span}}</h4>
+
+{{!-- list of author books --}}
+<div>
+{{#each books}}
+<a href="{{this.url}}">{{this.title}}</a></li>
+<p>{{this.summary}}</p>
+{{else}}
+<p>this author doesn't have his own book</p>
+{{/each}}
+<a href='{{author.url}}/update'>Update</a>
+<br>
+<a href='{{author.url}}/delete'>Delete</a>
+<br>
+<a href='/catalog/book/create'>Create Book</a>
+</div>

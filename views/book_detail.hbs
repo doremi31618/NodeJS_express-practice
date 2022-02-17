@@ -1,0 +1,18 @@
+
+{{!-- author information --}}
+<h1>{{book.title}}</h1>
+<h4>by {{book.author.name}}</h4>
+
+{{!-- list of author books --}}
+<div>
+    <label for="summary">summary</label>
+    <p>{{book.summary}}</p>
+    <div class="other-page">
+        <a href='{{book.url}}/update'>Update</a>
+        <br>
+        <a href='{{book.url}}/delete'>Delete</a>
+        <br>
+        <a href='/catalog/book/create'>Create Book</a>
+    </div>
+
+</div>

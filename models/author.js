@@ -9,11 +9,7 @@ var AuthorSchema = new Schema({
     date_of_death: {type: Date},
 });
 
-AuthorSchema
-.virtual('name')
-.get(()=>{
-    console.log(this.first_name);
-    console.log(this.family_name);
+AuthorSchema.virtual('name').get(function(){
     var output_string = "";
     if(this.first_name)output_string+=this.first_name;
     output_string += " ,"
@@ -24,24 +20,21 @@ AuthorSchema
 
 AuthorSchema
 .virtual('url')
-.get(()=>{
-    return '/catalog/auhor/' + this._id;
+.get(function() {
+    return '/catalog/author/' + this._id;
 });
 
 AuthorSchema
 .virtual('life_span')
-.get(()=>{
-    var birth_date_formated = "";
-    var death_date_formated = "";
+.get(function(){
+    var output_string="";
     if (this.date_of_birth){
-        birth_date_formated = DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED);
+        output_string += DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED);
     }
+    output_string += " - ";
     if (this.date_of_death){
-        death_date_formated = DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED);
+        output_string += DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED);
     }
-    return this.birth_date_formated + " - " + this.death_date_formated;
+    return output_string;
 });
-
-
-
 module.exports = mongoose.model('Author', AuthorSchema);

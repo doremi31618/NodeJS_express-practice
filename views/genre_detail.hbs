@@ -1,0 +1,12 @@
+<div>
+    <h1>{{genre.name}}</h1>
+    <div style="margin-left:20px; margin: top 20px;">
+        <h4>Books</h4>
+        {{#each genre_books}}
+        <a href="{{this.url}}">{{this.title}}</a>
+        <p>{{this.summary}}</p>
+        {{else}}
+        <p>no content</p>
+        {{/each}}
+    </div>
+</div>

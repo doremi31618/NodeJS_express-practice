@@ -4,12 +4,10 @@
     <title> {{title}} </title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="../sites/javascripts/jquery-3.5.1.slim.min.js"></script>
-    {{!--
-    <script type="text/javascript" src="../sites/javascripts/uianumation.js"></script> --}}
-    <script type="text/javascript" src="../sites/javascripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../sites/stylesheets/style.css">
-    <link rel="stylesheet" href="../sites/stylesheets/bootstrap.min.css">
+    <script type="text/javascript" src="/sites/javascripts/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="/sites/javascripts/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/sites/stylesheets/style.css">
+    <link type="text/css" rel="stylesheet" href="/sites/stylesheets/bootstrap.min.css">
 </head>
 
 <body>
@@ -47,15 +45,16 @@
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                                 class="dropdown-toggle">Create</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li><a href="/catalog/author/create">Create new Author</a></li>
-                                <li><a href="/catalog/book/create">Create new book</a></li>
-                                <li><a href="/catalog/genre/create">Create new genre</a></li>
-                                <li><a href="/catalog/bookinstance/create">Create new bookinstance</a></li>
+                                <li><a href="/catalog/author/create"> Create new Author</a></li>
+                                <li><a href="/catalog/book/create"> Create new book</a></li>
+                                <li><a href="/catalog/genre/create"> Create new genre</a></li>
+                                <li><a href="/catalog/bookinstance/create"> Create new bookinstance</a></li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="/auth/google">google login</a>
+                            <a href="/auth/logout">google logout</a>
                         </li>
                 </ul>
                 {{!-- <li>

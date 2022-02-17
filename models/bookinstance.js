@@ -11,13 +11,13 @@ var BookInstanceSchema = new Schema({
 
 BookInstanceSchema
 .virtual('url')
-.get(()=>{
+.get(function(){
     return '/catalog/bookinstance/' + this._id;
 });
 
 BookInstanceSchema
 .virtual('due_back_formated')
-.get(()=>{
+.get(function() {
     return DateTime.fromJSDate(this.due_back).toLocaleString(DateTime.DATE_MED);
 });
 

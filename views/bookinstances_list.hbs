@@ -1,6 +1,4 @@
-Handlebars.registerHelper('isEqual', function (value1, value2) {
-  return value1 == value2;
-});
+
 
 {{#if err}}
 <p>somethig went wrong</p>
@@ -11,12 +9,12 @@ err
     <li>
     <a href="{{this.url}}">
         {{this.title}} : {{this.imprint}} - 
-        {{#if (isEqual this.status 'Available')}}
+        {{#if (ifEquals this.status 'Available')}}
         <span class="text-success">{{this.status}}</span>
         {{else}}
         <span class="text-success">Due : {{this.due_back_formated}}</span>
         {{/if}}
-        {{#if (isEqual this.status 'Maintenance')}}
+        {{#if (ifEquals this.status 'Maintenance')}}
         <span class="text-danger">{{this.status}}</span>
         {{else}}
         <span class="text-warning">{{this.status}}</span>

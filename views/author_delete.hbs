@@ -1,0 +1,17 @@
+
+{{!-- author information --}}
+<h1>{{author.name}}</h1>
+<h4>{{author.life_span}}</h4>
+
+{{!-- list of author books --}}
+<div>
+{{#if message}}
+<p>{{message}}</p>
+{{else}}
+<p>Do you really want to delete this author ? </p>
+{{/if}}
+
+<form action="/catalog/author/{{author._id}}/delete" method="post">
+<input type="submit" value="submit">
+</form>
+</div>

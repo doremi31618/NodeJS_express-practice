@@ -19,7 +19,7 @@ var BookInstance = require('./models/bookinstance')
 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://localhost:27017/express-practice';
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -216,6 +216,7 @@ async.series([
 // Optional callback
 function(err, results) {
     if (err) {
+        console.log(Genre);
         console.log('FINAL ERR: '+err);
     }
     else {
